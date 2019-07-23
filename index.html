@@ -1,0 +1,29 @@
+
+<html>
+    <body>
+        <h3 style="
+            text-align: center;
+            font-size: 4em;">Sample page</h3>
+        <button style="
+            font-size: 2em;
+            width: 200px;
+            height: 100px;
+            margin: 20px;
+            " id="live_chat">Open Chat</button>
+    </body>
+    <script>
+        function openLiveChat() {
+            var dict = {"page":"MyPage","func":"Live_Chat"}
+            webkit.messageHandlers.rakuten.postMessage(dict);
+        }
+        function displayAlertToUser() {
+            console.log("displayAlertToUser");
+            alert("Please wait for Live Chat page to Load");
+        }
+        document.getElementById('live_chat').onclick = function()
+        {
+            alert('Opening Live Chat');
+        }
+        window.onload = openLiveChat;
+    </script>
+</html>
